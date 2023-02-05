@@ -2,16 +2,10 @@
 #include<string.h>
 #include<stdlib.h>
 
-void copy(int a[], int n, int* c) { int j;
-c = (int *) malloc(n*sizeof(int));
-for (j=0; j<n; j++) c[j] = a[j]; }
-
-
 int main(){
-    int arr[5]= {1,6,3,4,5}; 
-    int var = 5; 
-    int *c = &var; 
-    copy(arr,5,c); 
-    printf("%d", c[2]); 
-    return 0; 
+    if(fork() == 0){
+        printf("%d is the child of %d \n" , getpid() , getppid()); 
+    }else{
+        printf("%d is the parent of %d \n" , getpid() , fork()); 
+    }
 }

@@ -1,5 +1,5 @@
-#include "search.h"
 #include <stdio.h>
+#include "search.h"
 
 int search(int x, int A[], int N) {
 

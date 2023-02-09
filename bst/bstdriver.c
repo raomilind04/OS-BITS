@@ -11,6 +11,7 @@ int main(int argc, char* argv[]) {
     root = addNode(root, 7);
     root = addNode(root, 6);
     root = addNode(root, 4);
+    root = addNode(root , 20); 
     
     struct node* result;
     for (int i=0; i<=10; i++) {

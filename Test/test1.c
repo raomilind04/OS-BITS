@@ -3,9 +3,19 @@
 #include<stdlib.h>
 
 int main(){
-    if(fork() == 0){
-        printf("%d is the child of %d \n" , getpid() , getppid()); 
-    }else{
-        printf("%d is the parent of %d \n" , getpid() , fork()); 
+    FILE *f ; 
+    f = fopen("/Users/milindrao/Desktop/college/3-2/OS/Code/Test/test.txt" , "w"); 
+    if(f == NULL){
+        printf("Error"); 
+        return 0; 
     }
+    int n ; 
+    scanf("%d" , &n);
+    fprintf(f , "%d" , n); 
+    fclose(f); 
+    int  num;  
+    f = fopen("/Users/milindrao/Desktop/college/3-2/OS/Code/Test/test.txt" , "r"); 
+    fscanf(f , "%d" , &num);
+    fclose(f); 
+    printf("Found : %d" , num);  
 }

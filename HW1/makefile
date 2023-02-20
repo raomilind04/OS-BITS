@@ -1,8 +1,14 @@
-bubble.out: main.c bSort.o
-	gcc -o bubble.out main.c bSort.o
+driver.out : main.o bubbleSort.o mergeSort.o
+	gcc main.o bubbleSort.o mergeSort.o -o driver.out
 
-bSort.o : bubbleSort.c sort.h
-	gcc -c bubbleSort.c
+main.o : main.c
+	gcc -c main.c -o main.o
 
-clean:
-	rm -f *.o *.out
+bubbleSort.o : bubbleSort.c sort.h
+	gcc -c bubbleSort.c -o bubbleSort.o
+
+mergeSort.o : mergeSort.c sort.h
+	gcc -c mergeSort.c -o mergeSort.o
+
+clean : 
+	rm driver.out *.o

@@ -37,7 +37,7 @@ int main() {
     }
 
     // As I dont think addition over 20 is as important I don't care about C-c
-    // stopping me as much. So I wan't SIGINT to do what it used to do.
+    // stopping me as much. So I want SIGINT to do what it used to do.
 
     void (* ret)(int) = signal(SIGINT, SIG_DFL);
 

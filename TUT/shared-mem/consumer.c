@@ -9,11 +9,15 @@
 int main(int argc, char *argv[])
 {
     int shmid;
+    // SHM_ID is positive number if shared memory is created successfully. 
     key_t key = IPC_PRIVATE;
-    int flag = SHM_R | SHM_W; //flags to allow read and write in shared memory
+    int flag = SHM_R | SHM_W;   //flags to allow read and write in shared memory
     int * shm;
     
     srand(time(0));
+    // specify the seed value that the rand() function uses. 
+    // Same seed => same order in which rand values are generated. 
+
     if(argc == 2)
     {
         key = atoi(argv[1]); //setting key to be the command line argument
@@ -51,7 +55,7 @@ int main(int argc, char *argv[])
         {
             printf("Consumer -> No units to consume (%d)!\n", *shm);
         }
-        int slp = (rand() % (7 - 3 + 1)) + 3; //sleeping for a random time in between 3 an 7 seconds
+        int slp = (rand() % (5)) + 1; //sleeping for a random time in between 3 an 7 seconds
         sleep(slp);
     }
     shmdt((void *)shm); //detaching from the shared memory

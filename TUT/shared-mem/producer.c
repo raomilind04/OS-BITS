@@ -33,6 +33,9 @@ int main(int argc, char *argv[])
         }
     }
     shm = (int *) shmat(shmid, NULL, 0); //letting the operating system pick the address, stroing the returned pointer in shm.
+    // shmat returns a void ptr. 
+    // second argument -> shmaddr = NULL -> attach to first free memory location.
+    // shmflag -> 0 => both read and write permissions. 
     if(shm == (int *) -1)
     {
         perror("shmat");

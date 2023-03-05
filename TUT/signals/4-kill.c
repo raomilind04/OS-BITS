@@ -7,6 +7,7 @@
 int ret;
 
 void child_handler(int signum) {
+    printf("Child Handler \n"); 
     printf("[%d] Handled.\n", getpid());
     printf("[%d] Sending signal to %d.\n", getpid(), getppid());
     sleep(1);
@@ -14,7 +15,7 @@ void child_handler(int signum) {
 }
 
 void parent_handler(int signum) {
-    printf("[%d] Handled.\n", getpid());
+    printf("[%d] Handled. in parent \n", getpid());
 }
 
 int main() {

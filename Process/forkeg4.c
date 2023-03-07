@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<unistd.h>
 #include<sys/types.h>
+#include <sys/wait.h>
+
 int x=0;
 int main(int argc, char *argv[])
 {

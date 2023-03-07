@@ -3,6 +3,8 @@
 #include<errno.h>
 #include<stdlib.h>
 #include<sys/types.h>
+#include <sys/wait.h>
+
 int main(int argc, char *argv[])
 {
 	pid_t var1;
@@ -16,7 +18,7 @@ int main(int argc, char *argv[])
 	else if(var1==0)
 	{
 		printf("I am in Child process with PID %d, I am exiting\n",getpid());
-		//exit(2);
+		// exit(10);
 	//	return 2;
 	}
 	else

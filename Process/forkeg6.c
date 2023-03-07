@@ -2,6 +2,8 @@
 #include<unistd.h>
 #include<sys/types.h>
 #include<stdlib.h>
+#include <sys/wait.h>
+
 int x=0;
 int main(int argc, char *argv[])
 {

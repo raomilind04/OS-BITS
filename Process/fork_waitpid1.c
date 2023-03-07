@@ -4,6 +4,8 @@
 #include<stdlib.h>
 #include<sys/types.h>
 #include<signal.h>
+#include <sys/wait.h>
+
 int main(int argc, char *argv[])
 {
 	pid_t var1;

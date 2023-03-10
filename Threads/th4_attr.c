@@ -1,6 +1,9 @@
 #include<pthread.h> 
 #include<stdio.h>
 #include<stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+
 int *fib;
 void *runner(void *param);
 int main(int argc,char *argv[])

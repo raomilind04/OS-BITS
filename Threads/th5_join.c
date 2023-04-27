@@ -34,7 +34,7 @@ void *runner ( void *param )
 	int *fib;
 	sparam.sched_priority=10;
 	pthread_setschedparam(pthread_self(),SCHED_RR,&sparam);
-//	pthread_detach(pthread_self());
+	pthread_detach(pthread_self());
 	N = atoi(param);
 	if(N>0)
 	{
